@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nidhi Shah &amp; Kunal Vora — Wedding Invitation | 26 Nov 2026</title>
+
+  <!-- Open Graph / WhatsApp Link Preview Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Nidhi & Kunal — Wedding Invitation | 26 Nov 2026" />
+  <meta property="og:description" content="Together with their families, Nidhi Shah & Kunal Vora cordially invite you to celebrate their wedding at Magdalla Farm, Surat." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #fdf6f6 0%, #f8e8e8 50%, #f3dede 100%);
+      --card-bg: #fffdfd;
+      --primary: #9e4756;
+      --primary-dark: #7a313e;
+      --accent: #c59b6d;
+      --text-main: #3d2c2e;
+      --text-muted: #7a6366;
+      --border-tint: rgba(197, 155, 109, 0.35);
+    }
+
+    body.theme-ivory {
+      --bg-gradient: linear-gradient(135deg, #fcfaf5 0%, #f5efe2 50%, #ede3d1 100%);
+      --card-bg: #fffef9;
+      --primary: #8c6239;
+      --primary-dark: #634323;
+      --accent: #b88a44;
+      --text-main: #382e24;
+      --text-muted: #736454;
+      --border-tint: rgba(184, 138, 68, 0.4);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-main);
+      min-height: 100vh;
+      overflow-x: hidden;
+      transition: background 0.5s ease;
+    }
+
+    /* Envelope Gatefold Overlay */
+    #envelope-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: var(--bg-gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      cursor: pointer;
+      transition: opacity 0.9s ease, transform 0.9s ease, visibility 0.9s;
+    }
+
+    #envelope-overlay.opened {
+      opacity: 0;
+      transform: scale(1.06);
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .envelope-card {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      background: var(--card-bg);
+      border-radius: 24px;
+      padding: 56px 32px;
+      text-align: center;
+      box-shadow: 0 25px 60px rgba(61, 44, 46, 0.14);
+      border: 1px solid var(--border-tint);
+      overflow: hidden;
+    }
+
+    .floral-corner {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      pointer-events: none;
+    }
+    .floral-tl { top: -15px; left: -15px; }
+    .floral-br { bottom: -15px; right: -15px; transform: rotate(180deg); }
+
+    .subtitle-top {
+      font-size: 11px;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .couple-script {
+      font-family: 'Great Vibes', cursive;
+      font-size: 54px;
+      color: var(--primary);
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+
+    .date-line {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 34px;
+    }
+
+    .wax-seal {
+      width: 84px;
+      height: 84px;
+      margin: 0 auto 22px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #c86d7d, #8a3645);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 25px rgba(158, 71, 86, 0.4), inset 0 0 0 4px rgba(255,255,255,0.2);
+      transition: transform 0.3s ease;
+      animation: pulseSeal 2.2s infinite;
+    }
+
+    .envelope-card:hover .wax-seal { transform: scale(1.08); }
+
+    .wax-initials {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .wax-sub {
+      font-size: 8px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      opacity: 0.9;
+    }
+
+    .tap-hint {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    @keyframes pulseSeal {
+      0%, 100% { box-shadow: 0 10px 25px rgba(158, 71, 86, 0.4), 0 0 0 0 rgba(158, 71, 86, 0.35); }
+      50% { box-shadow: 0 10px 25px rgba(158, 71, 86, 0.4), 0 0 0 14px rgba(158, 71, 86, 0); }
+    }
+
+    /* Floating Petals */
+    #petals-container {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .petal {
+      position: absolute;
+      top: -20px;
+      background: radial-gradient(circle at 30% 30%, #f9d5dc, #e598a8);
+      border-radius: 150% 0 150% 0;
+      opacity: 0.65;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-10vh) rotate(0deg) translateX(0); }
+      50% { transform: translateY(50vh) rotate(180deg) translateX(25px); }
+      100% { transform: translateY(110vh) rotate(360deg) translateX(-15px); }
+    }
+
+    /* Top Controls */
+    .top-bar {
+      position: relative;
+      z-index: 10;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 18px 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pill-btn {
+      background: rgba(255,255,255,0.85);
+      border: 1px solid var(--border-tint);
+      color: var(--primary);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      backdrop-filter: blur(6px);
+      transition: all 0.25s;
+    }
+    .pill-btn:hover { background: var(--primary); color: #fff; }
+
+    /* Main Card */
+    .main-container {
+      position: relative;
+      z-index: 5;
+      max-width: 680px;
+      margin: 20px auto 60px;
+      padding: 0 16px;
+    }
+
+    .invite-sheet {
+      background: var(--card-bg);
+      border-radius: 28px;
+      padding: 48px 24px;
+      box-shadow: 0 20px 50px rgba(61, 44, 46, 0.08);
+      border: 1px solid var(--border-tint);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal-item.visible { opacity: 1; transform: translateY(0); }
+
+    .divider {
+      width: 90px;
+      height: 1px;
+      background: var(--accent);
+      margin: 24px auto;
+      opacity: 0.5;
+    }
+
+    .serif-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .body-text {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* Countdown */
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      max-width: 400px;
+      margin: 24px auto;
+    }
+
+    .count-box {
+      background: rgba(197, 155, 109, 0.08);
+      border: 1px solid var(--border-tint);
+      border-radius: 14px;
+      padding: 12px 6px;
+    }
+
+    .count-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--primary);
+      display: block;
+    }
+
+    .count-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+    }
+
+    /* Venue Card */
+    .venue-box {
+      background: rgba(158, 71, 86, 0.04);
+      border: 1px solid var(--border-tint);
+      border-radius: 18px;
+      padding: 24px 20px;
+      margin: 24px 0;
+    }
+
+    .action-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); }
+
+    .btn-whatsapp {
+      display: inline-block;
+      background: #25D366;
+      color: #fff;
+      text-decoration: none;
+      padding: 13px 24px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .btn-whatsapp:hover { background: #1ebe5d; transform: translateY(-1px); }
+
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+    .btn-outline:hover { background: var(--primary); color: #fff; }
+
+    /* Embedded Google Form Container */
+    .form-embed-wrap {
+      max-width: 540px;
+      margin: 20px auto 0;
+      background: #ffffff;
+      border: 1px solid var(--border-tint);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(61, 44, 46, 0.05);
+    }
+
+    .form-embed-wrap iframe {
+      width: 100%;
+      height: 820px;
+      border: none;
+      display: block;
+    }
+
+    .wa-footer-box {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px dashed var(--border-tint);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Petals Layer -->
+  <div id="petals-container"></div>
+
+  <!-- Gatefold Envelope Cover -->
+  <div id="envelope-overlay">
+    <div class="envelope-card">
+      <svg class="floral-corner floral-tl" viewBox="0 0 150 150">
+        <circle cx="35" cy="35" r="28" fill="#f3c6cd" opacity="0.85"/>
+        <circle cx="35" cy="35" r="16" fill="#e59ca8" opacity="0.85"/>
+        <circle cx="75" cy="25" r="18" fill="#f5d0c3" opacity="0.85"/>
+        <circle cx="28" cy="78" r="18" fill="#f3c6cd" opacity="0.85"/>
+        <path d="M55,15 Q85,40 65,65 Q40,45 55,15 Z" fill="#8fa893" opacity="0.75"/>
+      </svg>
+      <svg class="floral-corner floral-br" viewBox="0 0 150 150">
+        <circle cx="35" cy="35" r="28" fill="#f3c6cd" opacity="0.85"/>
+        <circle cx="35" cy="35" r="16" fill="#e59ca8" opacity="0.85"/>
+        <circle cx="75" cy="25" r="18" fill="#f5d0c3" opacity="0.85"/>
+        <circle cx="28" cy="78" r="18" fill="#f3c6cd" opacity="0.85"/>
+        <path d="M55,15 Q85,40 65,65 Q40,45 55,15 Z" fill="#8fa893" opacity="0.75"/>
+      </svg>
+
+      <div class="subtitle-top">Auspicious Wedding Invitation</div>
+      <div class="couple-script">Nidhi &amp; Kunal</div>
+      <div class="date-line">26th November 2026 &bull; Surat</div>
+
+      <div class="wax-seal" id="open-invite-btn">
+        <span class="wax-initials">N &amp; K</span>
+        <span class="wax-sub">Tap Seal</span>
+      </div>
+
+      <div class="tap-hint">Tap to Open Invitation</div>
+    </div>
+  </div>
+
+  <!-- Top Controls -->
+  <div class="top-bar">
+    <button class="pill-btn" id="theme-toggle-btn">Shade: Pastel Blush</button>
+    <button class="pill-btn" id="music-toggle-btn">Music: Off</button>
+  </div>
+
+  <!-- Main Invitation Content -->
+  <div class="main-container">
+    <div class="invite-sheet">
+      <div class="reveal-item">
+        <div class="subtitle-top">Together With Their Families</div>
+        <div class="couple-script" style="font-size: 62px;">Nidhi Shah</div>
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--accent); font-style: italic; margin: 4px 0;">&amp;</div>
+        <div class="couple-script" style="font-size: 62px;">Kunal Vora</div>
+      </div>
+
+      <div class="divider reveal-item"></div>
+
+      <div class="reveal-item">
+        <p class="body-text">
+          Request the pleasure of your gracious presence and blessings as they unite in the sacred bond of marriage.
+        </p>
+      </div>
+
+      <!-- Countdown Timer -->
+      <div class="countdown-grid reveal-item">
+        <div class="count-box"><span class="count-num" id="cd-days">00</span><span class="count-label">Days</span></div>
+        <div class="count-box"><span class="count-num" id="cd-hours">00</span><span class="count-label">Hours</span></div>
+        <div class="count-box"><span class="count-num" id="cd-mins">00</span><span class="count-label">Mins</span></div>
+        <div class="count-box"><span class="count-num" id="cd-secs">00</span><span class="count-label">Secs</span></div>
+      </div>
+
+      <!-- Event & Venue Details -->
+      <div class="venue-box reveal-item">
+        <div class="subtitle-top" style="margin-bottom: 6px;">Wedding Ceremony</div>
+        <div class="serif-heading">Thursday, 26th November 2026</div>
+        <p class="body-text" style="font-weight: 500; color: var(--text-main); margin-top: 8px;">
+          Magdalla Farm, Surat
+        </p>
+        <p class="body-text" style="font-size: 13px; margin-top: 4px;">
+          Auspicious Muhurat &bull; Evening Reception to follow
+        </p>
+
+        <div class="action-row">
+          <a class="btn-primary" href="https://www.google.com/maps/search/?api=1&query=Magdalla+Farm+Surat" target="_blank" rel="noopener">
+            View Google Maps
+          </a>
+          <button class="btn-outline" id="calendar-btn">
+            Add to Calendar
+          </button>
+        </div>
+      </div>
+
+      <div class="divider reveal-item"></div>
+
+      <!-- Embedded RSVP Form Inside Card -->
+      <div class="reveal-item">
+        <div class="serif-heading">RSVP &amp; Blessings</div>
+        <p class="body-text" style="font-size: 13px;">Kindly confirm your presence below — your response is saved directly in the guest list.</p>
+
+        <div class="form-embed-wrap">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeV-a0mnM2nA2EjMmwizillDwwN4nwZuYy4uw94Br_CtHi--w/viewform?embedded=true" title="RSVP Form">Loading RSVP Form…</iframe>
+        </div>
+
+        <div class="wa-footer-box">
+          <p class="body-text" style="font-size: 12px; margin-bottom: 10px;">Prefer sending a quick message instead?</p>
+          <a class="btn-whatsapp" href="https://wa.me/919512748842?text=Hello!%20Confirming%20our%20RSVP%20for%20Nidhi%20%26%20Kunal's%20Wedding%20on%2026th%20Nov%202026." target="_blank" rel="noopener">
+            Message Host on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 1. ENVELOPE OPEN & REVEAL
+    const envelopeOverlay = document.getElementById('envelope-overlay');
+
+    function revealInvitation() {
+      envelopeOverlay.classList.add('opened');
+      document.querySelectorAll('.reveal-item').forEach((item, index) => {
+        setTimeout(() => item.classList.add('visible'), 180 + (index * 140));
+      });
+      startAmbientMusic();
+    }
+
+    envelopeOverlay.addEventListener('click', revealInvitation);
+
+    // 2. FLOATING PETALS
+    const petalsContainer = document.getElementById('petals-container');
+    for (let i = 0; i < 18; i++) {
+      const petal = document.createElement('div');
+      petal.className = 'petal';
+      const size = Math.random() * 10 + 10;
+      petal.style.width = size + 'px';
+      petal.style.height = size + 'px';
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.animationDuration = (Math.random() * 6 + 7) + 's';
+      petal.style.animationDelay = (Math.random() * 5) + 's';
+      petalsContainer.appendChild(petal);
+    }
+
+    // 3. SHADE SWITCHER
+    const themeBtn = document.getElementById('theme-toggle-btn');
+    themeBtn.addEventListener('click', () => {
+      document.body.classList.toggle('theme-ivory');
+      themeBtn.textContent = document.body.classList.contains('theme-ivory') ? 'Shade: Ivory & Gold' : 'Shade: Pastel Blush';
+    });
+
+    // 4. SOFT WEB AUDIO AMBIENT CHIME
+    let audioCtx = null, musicInterval = null, isPlaying = false;
+    const musicBtn = document.getElementById('music-toggle-btn');
+
+    function playNote(freq) {
+      if (!audioCtx) return;
+      const osc = audioCtx.createOscillator(), gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+      gain.gain.setValueAtTime(0.03, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 2.5);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 2.5);
+    }
+
+    function startAmbientMusic() {
+      if (isPlaying) return;
+      try {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        const notes = [261.63, 329.63, 392.00, 493.88, 523.25];
+        let step = 0;
+        isPlaying = true;
+        musicBtn.textContent = 'Music: On';
+        playNote(notes[0]);
+        musicInterval = setInterval(() => {
+          step = (step + 1) % notes.length;
+          playNote(notes[step]);
+        }, 1800);
+      } catch (e) {}
+    }
+
+    musicBtn.addEventListener('click', () => {
+      if (isPlaying) {
+        clearInterval(musicInterval);
+        isPlaying = false;
+        musicBtn.textContent = 'Music: Off';
+      } else {
+        startAmbientMusic();
+      }
+    });
+
+    // 5. COUNTDOWN TO 26 NOV 2026
+    const weddingDate = new Date('2026-11-26T18:00:00+05:30').getTime();
+    setInterval(() => {
+      const diff = weddingDate - new Date().getTime();
+      if (diff <= 0) return;
+      document.getElementById('cd-days').textContent = String(Math.floor(diff / 86400000)).padStart(2, '0');
+      document.getElementById('cd-hours').textContent = String(Math.floor((diff / 3600000) % 24)).padStart(2, '0');
+      document.getElementById('cd-mins').textContent = String(Math.floor((diff / 60000) % 60)).padStart(2, '0');
+      document.getElementById('cd-secs').textContent = String(Math.floor((diff / 1000) % 60)).padStart(2, '0');
+    }, 1000);
+
+    // 6. ADD TO CALENDAR (.ICS DOWNLOAD)
+    document.getElementById('calendar-btn').addEventListener('click', () => {
+      const icsContent = [
+        'BEGIN:VCALENDAR', 'VERSION:2.0', 'BEGIN:VEVENT',
+        'DTSTART:20261126T123000Z', 'DTEND:20261126T173000Z',
+        'SUMMARY:Nidhi Shah & Kunal Vora Wedding', 'LOCATION:Magdalla Farm, Surat',
+        'DESCRIPTION:Wedding celebration of Nidhi Shah & Kunal Vora.',
+        'END:VEVENT', 'END:VCALENDAR'
+      ].join('\r\n');
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(new Blob([icsContent], { type: 'text/calendar;charset=utf-8' }));
+      link.download = 'Nidhi-Kunal-Wedding.ics';
+      link.click();
+    });
+  </script>
+</body>
+</html>
